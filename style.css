@@ -47,7 +47,7 @@ h1 {
 /*==========================================
 * Global Buttons
 ==========================================*/
-.btn-dark {
+.btn-dark, .btn-light {
     background: linear-gradient(180deg, #0B2541 0%, #213954 100%);
     box-shadow: 0px 20px 30px -10px rgb(11 37 65 / 36%), 0px 10px 10px -7px rgb(11 37 65 / 22%);
     border-radius: 20px;
@@ -59,12 +59,22 @@ h1 {
     padding: 14px;
     padding-right: 30px;
     position: relative;
+    transition: all .4s ease;
+}
+.btn-light {
+    background: #fff;
+    color: #0B2541;
 }
 .btn-dark:hover {
     background: #fff;
     color: #000;
 }
-.btn-dark:after {
+.btn-light:hover {
+    background: linear-gradient(180deg, #0B2541 0%, #213954 100%);
+    color: #fff;
+}
+.btn-dark:after,
+.btn-light:after {
     content: url(img/dark-btn-arrow.png);
     transform: scale(.5);
     position: absolute;
@@ -429,6 +439,7 @@ h1 {
 ================================================*/
 #kunden {
     position: relative;
+    padding-bottom: 0;
 }
 .kunden-head {
     text-align: center;
@@ -534,3 +545,290 @@ h1 {
     font-family: "Font Awesome 5 Free";
     font-weight: 600;
 }
+/*=========================================================
+* CTA Small
+=====================================================*/
+.cta-small {
+    background: linear-gradient(270deg, #39B54A -4.02%, #29ABDC 80.22%);
+    border-radius: 20px;
+    padding-top: 20px;
+}
+.cta-small h2 {
+    color: #fff;
+    text-align: center;
+}
+/*=========================================================
+* Hotspot Small
+=====================================================*/
+.service {
+    background: #F5F7F8;
+}
+.service .team-img {
+    background: transparent;
+}
+.service-head img {
+    width: 100%;
+    transform: scale(1.14);
+}
+.service-head {
+    position: relative;
+}
+.hotspot-btn {
+    position: absolute;
+    width: 6.5vw;
+    height: 6.5vw;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: heartbeat .7s infinite alternate;
+    animation-timing-function: ease;
+}
+.hotspot-btn .inner-circle {
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F7F8 100%);
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.268529), 3px 4px 5px rgba(113, 21, 43, 0.514717);
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+}
+.hotspot-btn .outer-circle {
+    background: conic-gradient(from 90deg at 50% 50%, #FCB546 -41.58deg, #BD0053 55.71deg, #ED1E79 125.38deg, #F56F57 184.42deg, #FDBE84 217.83deg, #FFD490 242.3deg, #FECE83 269.94deg, #FCB546 318.42deg, #BD0053 415.71deg);
+    box-shadow: 3px 12px 12px -4px rgba(68, 23, 43, 0.676766), inset 0px 1px 0px rgba(255, 255, 255, 0.411162), inset 0px -1px 0px rgba(0, 0, 0, 0.143649);
+    position: absolute;
+    width: 6.5vw;
+    height: 6.5vw;
+    border-radius: 50%;
+}
+.service .hotspot .hotspot-btn:first-child {
+    top: 10%;
+}
+.service .hotspot .hotspot-btn:nth-child(2) {
+    top: 27%;
+    left: 28%;
+}
+.service .hotspot .hotspot-btn:nth-child(3) {
+    top: 30%;
+    left: 52%;
+}
+.service .hotspot .hotspot-btn:nth-child(4) {
+    top: 25%;
+    right: 7%;
+}
+.hotspot-btn.inactive .outer-circle {
+    background: rgba(255, 255, 255, 0.39);
+    box-shadow: 3px 12px 12px -4px rgba(0, 0, 0, 0.316691), inset 0px 1px 0px rgba(255, 255, 255, 0.411162), inset 0px -1px 0px rgba(0, 0, 0, 0.143649);
+}
+.hotspot-btn.active:after {
+    content: '\f0d8';
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    bottom: -15px;
+    color: #fff;
+}
+/*-- Heartbeat animation --*/
+@keyframes heartbeat {
+    100% {
+        transform: scale(1.1);
+    }
+}
+/*===============================================
+* Member Cards
+===============================================*/
+.member {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 13px 48px -13px rgba(11, 37, 65, 0.239726), 0px 35px 83px rgba(3, 11, 20, 0.349973);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10vw;
+}
+.member .head {
+    display: flex;
+    align-items: center;
+}
+.member .meta {
+    display: flex;
+    flex-direction: column;
+}
+.member .name {
+    font-weight: 700;
+}
+.member .designation {
+    font-size: 12px;
+    opacity: 0.4;
+}
+.profile-img {
+    width: 50px !important;
+    margin-right: 10px;
+}
+.member .body p {
+    font-size: 13px;
+}
+.member a {
+    color: #29ABDC;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.member a:after {
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    position: relative;
+    top: 1px;
+    padding-left: 7px;
+}
+.member.michael {
+    z-index: 2;
+}
+.member {
+    display: none;
+}
+.service-content h2 {
+    font-weight: 400;
+    margin-top: 30px;
+}
+.service-content h2 span {
+    font-weight: 700;
+}
+.service-content p {
+    font-size: 14px;
+}
+/*===============================================
+* Support Section
+===============================================*/
+section.support h2 {
+    font-weight: 400;
+}
+section.support h2 span {
+    font-weight: 700;
+}
+.grad-pointers {
+    margin-top: 30px;
+    display: flex;
+}
+.grad-pointers span {
+    max-height: 22px;
+}
+.grad-pointers span {
+    font-family: 'Roboto Mono', monospace;
+    background: conic-gradient(from 90deg at 50% 50%, #1C72B5 -15.75deg, #99DDFF 124.68deg, #1C72B5 270deg, #1C72B5 344.25deg, #99DDFF 484.68deg);
+    box-shadow: 0px 20px 30px -10px rgba(11, 37, 65, 0.363047), 0px 10px 10px -7px rgba(11, 37, 65, 0.224691);
+    border-radius: 20px;
+    padding: 12px 14px;
+    color: #fff;
+    margin-right: 20px;
+}
+.support .grad-pointers:nth-child(3) span {
+    background: conic-gradient(from 90deg at 50% 50%, #CEC6BE -106.16deg, #4B3E3E 125.78deg, #CEC6BE 253.84deg, #4B3E3E 485.78deg);
+}
+.support .grad-pointers:nth-child(4) span {
+    background: conic-gradient(from 90deg at 50% 50%, #FF8E8F 0deg, #B8077C 135deg, #FF8E8F 360deg);
+}
+.support .grad-pointers:nth-child(5) span {
+    background: conic-gradient(from 90deg at 50% 50%, #B79EDB -90deg, #5D3BEA 143.08deg, #B79EDB 270deg, #5D3BEA 503.08deg);
+}
+.support .grad-pointers:nth-child(6) span {
+    background: conic-gradient(from 90deg at 50% 50%, #F4D56E -71.15deg, #C85400 156.53deg, #F4D56E 288.85deg, #C85400 516.53deg);
+}
+.support .grad-pointers:nth-child(7) span {
+    background: conic-gradient(from 90deg at 50% 50%, #006F6D -38.04deg, #79D281 69.35deg, #006F6D 321.96deg, #79D281 429.35deg);
+}
+.grad-pointers h3 {
+    margin-top: 10px;
+}
+.grad-pointers p {
+    font-size: 14px;
+}
+/*===============================================
+* FAQs Section
+===============================================*/
+.faqs h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.7em;
+}
+section.faqs {
+    background: url(img/bg/faqs.jpg);
+}
+.faq {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 4px -1px rgba(11, 37, 65, 0.0861492), inset 0px 1px 0px rgba(255, 255, 255, 0.696835);
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.faq-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faq img {
+    width: 50px;
+    height: 50px;
+}
+.faq-body p,
+.faq-body ol li {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+.faq-body ol {
+    padding-left: 25px;
+}
+.active-profile {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+.active-img {
+    padding-left: 15px;
+    padding-right: 10px;
+    order: 2;
+    transform: scale(1.1);
+}
+.active-content {
+    display: flex;
+    flex-direction: column;
+}
+.active-content span:first-child {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+.active-content span:nth-child(2) {
+    font-size: 0.8em;
+    opacity: 0.4;
+}
+.active-content a {
+    color: #29ABDC;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+.active-content a:after {
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+.faq-body {
+    display: none;
+}
+.faq.active .faq-head img {
+    display: none;
+}
+.faq-close {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-weight: bold;
+    opacity: .4;
+}
+
