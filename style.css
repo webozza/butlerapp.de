@@ -95,61 +95,150 @@ h1 {
 }
 #masthead {
     width: 100%;
+    transition: all .4s ease;
 }
 .mobile-nav {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    background: transparent;
+    z-index: 2;
+    position: fixed;
+    width: calc(100% - 40px);
+    top: 0;
+    transition: all 1s ease;
 }
 .logo-container img {
     max-width: 170px;
 }
 .menu-toggle {
-    position: relative;
-    height: inherit;
-    width: 18px;
+    width: 30px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    right: -5px;
 }
 .menu-toggle button {
     z-index: 2;
     position: relative;
     border: none;
-}
-.menu-toggle button {
-    width: 18px;
-    height: 2px;
-    background: #0B2541;
-}
-.menu-toggle button:before, 
-.menu-toggle button:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #0B2541;
-    position: absolute;
-    left: 0;
-}
-.menu-toggle button:before {
-    top: -4px;
-}
-.menu-toggle button:after {
-    top: 4px;
-}
-.menu-toggle a:before {
-    position: absolute;
-    top: -10px;
+    background: transparent;
 }
 .mobile-menu {
     height: 100vh;
     width: 100%;
     background: rgba(11, 37, 65, 0.8);
+    backdrop-filter: blur(38.0559px);
     position: fixed;
     top: -100%;
     transition: all .4s ease;
 }
+/*-- HAMBURGER ICON --*/
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #0B2541;
+}
+.hamburger-icon {
+    top: calc(50% - 2px);
+    left: calc(50% - 10px);
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: "";
+    left: 0;
+}
+.hamburger-icon::before {
+    bottom: 4px;
+}
+.hamburger-icon::after {
+    top: 4px;
+}
+/*-- MENU ACTIVE STATE --*/
+.menu-toggle.active {
+    background: #0B2541;
+    position: relative;
+    border-radius: 12px;
+    padding: 2px;
+}
+.menu-toggle.active .hamburger-icon,
+.menu-toggle.active .hamburger-icon::before,
+.menu-toggle.active .hamburger-icon::after {
+    height: 3px;
+    background: #fff;
+}
+.menu-toggle.active .hamburger-icon {
+    transform: rotate(-45deg);
+}
+.menu-toggle.active .hamburger-icon:after {
+    transform: rotate(-270deg);
+    top: -1px;
+}
+.menu-toggle.active .hamburger-icon::before {
+    transform: scale(0);
+}
+.menu-toggle button, .hamburger-icon::after {
+    transition: all 0.3s linear;
+}
+/*-- MENU ITEMS --*/
+.mobile-menu ul {
+    height: calc(100vh - 55px);
+    position: relative;
+    top: 55px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+.menu-items a {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 1.3em;
+    line-height: 2em;
+}
+.mobile-menu ul .menu-items:last-child {
+    margin-top: 15px;
+}
+.menu-items .btn-light {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 5px 15px rgba(11, 37, 65, 0.0988633), inset 0px 1px 1px rgba(255, 255, 255, 0.198548);
+    padding: 14px 53px 16px 30px;
+    line-height: 22px;
+}
+.menu-items .btn-light:after {
+    transform: scale(.45);
+    top: 10px;
+}
+/*-- Active Menu --*/
 .mobile-menu.active {
     top: 0;
+}
+.active-menu {
+    height: 100vh;
+    overflow: hidden;
+}
+.active-menu #masthead,
+.sticky-menu {
+    background: rgb(255,255,255,.9);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.sticky-menu .mobile-nav {
+    background: rgb(255,255,255,.9);
+}
+.active-menu .mobile-nav {
+    background: #fff;
 }
 /*==========================================
 * Hero Section

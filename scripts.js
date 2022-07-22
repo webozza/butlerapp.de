@@ -1,11 +1,23 @@
 jQuery(document).ready(function($) {
     // Header
     var hH = $('#masthead').outerHeight();
-    $('.hero-sec').css('margin-top',-hH)
+    $('.hero-sec').css('margin-top',-hH);
 
     // Mobile Menu
-    $('.menu-toggle button').click(function() {
+    $('.menu-toggle button').on('click', function() {
         $('.mobile-menu').toggleClass('active');
+        $('body').toggleClass('active-menu');
+        $('.menu-toggle').toggleClass('active');
+    });
+
+    // STICKY MENU
+    $(window).scroll(function() {
+        var sT = $(this).scrollTop();
+        if(sT > 50) {
+            $('#masthead').addClass('sticky-menu');
+        } else {
+            $('#masthead').removeClass('sticky-menu');
+        }
     });
 
     // Scrolling logos
@@ -98,6 +110,7 @@ jQuery(document).ready(function($) {
     });
     // Active State
     $('.service .hotspot .hotspot-btn').each(function() {
+        var member = $(this).css('top');
         $(this).on('click', function() {
             $('.hotspot-btn').not(this).addClass('inactive');
             $(this).removeClass('inactive');
@@ -113,10 +126,19 @@ jQuery(document).ready(function($) {
     $('.irina').css('top',irina);
     $('.diana').css('top',diana);
 
+    // $(window).resize(function() {
+    //     $('.hotspot-btn').each(function() {
+    //         var memberTop = $(this).css('top');
+    //         console.log(memberTop);
+    //     });
+    // });
+
     $('.service-head .hotspot .hotspot-btn').each(function() {
         $(this).click(function() {
             var btnAttr = $(this).attr('data-attr');
+            console.log('.member'+btnAttr);
             $(this).toggleClass('active');
+            $(this).slideDown('.member'+btnAttr);
             if(btnAttr == 'michael') {
                 $('.member.michael').slideDown();
             } else if(btnAttr == 'kristina') {
@@ -144,7 +166,7 @@ jQuery(document).ready(function($) {
             $('.service .team-img').attr('src', 'img/team/pro-small.png')
         }, 5000);
     }
-    // Change image when reaching scroll point
+    // Change Image When Reaching Scroll Point
     function bgChanger() {
         $(window).scroll(function() {
             var wT = $(window).scrollTop();
@@ -179,4 +201,11 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+
+
+    $(window).on("resize", function() {
+        console.log("resize");
+    });
+    $(window).trigger("resize")
 }); //end

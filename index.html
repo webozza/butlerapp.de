@@ -23,12 +23,19 @@
                 </a>
             </div>
             <div class="menu-toggle">
-                <button></button>
+                <button>
+                    <span class="hamburger-icon"></span>
+                </button>
             </div>
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="menu-items"></li>
+                <li class="menu-items"><a href="">Funktionen</a></li>
+                <li class="menu-items"><a href="">Service</a></li>
+                <li class="menu-items"><a href="">Referenzen</a></li>
+                <li class="menu-items"><a href="">Preise</a></li>
+                <li class="menu-items"><a href="">Kontakt</a></li>
+                <li class="menu-items"><button class="btn-light">Kostenlose Demo</button></li>
             </ul>
         </div>
     </header>
@@ -291,52 +298,52 @@
     <section class="service">
         <div class="service-head">
             <div class="hotspot">
-                <div class="hotspot-btn" data-attr="michael">
+                <div class="hotspot-btn" data-person-selector=".michael" style="--button-top: 50%; --button-left: 50%;">
+                    <div class="outer-circle"></div>
+                    <div class="inner-circle"></div>
+                    <div class="member michael" data-attr="michael">
+                        <div class="head">
+                            <img class="profile-img" src="img/ppl/michael.png">
+                            <div class="meta">
+                                <span class="name">Michael</span>
+                                <span class="designation">Team Owner</span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Eine super Spezialistin mit hohen Kenntnissen und einer bewundernswerten Geduld. Unsere Mutter Teresa
+                                im Team.</p>
+                        </div>
+                        <a href="#">Contact Sales Executive</a>
+                    </div>
+                </div>
+                <div class="hotspot-btn">
+                    <div class="outer-circle"></div>
+                    <div class="inner-circle"></div>
+                    <div class="member kristina">
+                        <div class="head">
+                            <img class="profile-img" src="img/ppl/kristina.png">
+                            <div class="meta">
+                                <span class="name">Kristina</span>
+                                <span class="designation">Managerin</span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Eine super Spezialistin mit hohen Kenntnissen und einer bewundernswerten Geduld. Unsere Mutter Teresa
+                                im Team.</p>
+                        </div>
+                        <a href="#">Contact Sales Executive</a>
+                    </div>
+                </div>
+                <div class="hotspot-btn" data-person-selector=".irina">
                     <div class="outer-circle"></div>
                     <div class="inner-circle"></div>
                 </div>
-                <div class="hotspot-btn" data-attr="kristina">
-                    <div class="outer-circle"></div>
-                    <div class="inner-circle"></div>
-                </div>
-                <div class="hotspot-btn" data-attr="irina">
-                    <div class="outer-circle"></div>
-                    <div class="inner-circle"></div>
-                </div>
-                <div class="hotspot-btn" data-attr="diana">
+                <div class="hotspot-btn" data-person-selector=".diana">
                     <div class="outer-circle"></div>
                     <div class="inner-circle"></div>
                 </div>
             </div>
             <img class="team-img" src="img/team/pro-small.png">
-            <div class="member michael" data-attr="michael">
-                <div class="head">
-                    <img class="profile-img" src="img/ppl/michael.png">
-                    <div class="meta">
-                        <span class="name">Michael</span>
-                        <span class="designation">Team Owner</span>
-                    </div>
-                </div>
-                <div class="body">
-                    <p>Eine super Spezialistin mit hohen Kenntnissen und einer bewundernswerten Geduld. Unsere Mutter Teresa
-                        im Team.</p>
-                </div>
-                <a href="#">Contact Sales Executive</a>
-            </div>
-            <div class="member kristina" data-attr="kristina">
-                <div class="head">
-                    <img class="profile-img" src="img/ppl/kristina.png">
-                    <div class="meta">
-                        <span class="name">Kristina</span>
-                        <span class="designation">Managerin</span>
-                    </div>
-                </div>
-                <div class="body">
-                    <p>Eine super Spezialistin mit hohen Kenntnissen und einer bewundernswerten Geduld. Unsere Mutter Teresa
-                        im Team.</p>
-                </div>
-                <a href="#">Contact Sales Executive</a>
-            </div>
             <div class="member irina" data-attr="irina">
                 <div class="head">
                     <img class="profile-img" src="img/ppl/irina.png">
@@ -508,5 +515,6 @@
     <!-- SCRIPTS -->
     <script src="vendors/jquery.min.js"></script>
     <script src="scripts.js"></script>
+    <script src="butlerapp.js"></script>
 </body>
 </html>
