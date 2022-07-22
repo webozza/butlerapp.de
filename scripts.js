@@ -179,10 +179,4 @@ jQuery(document).ready(function($) {
             }
         });
     });
-    $('.faq-close').each(function() {
-        $(this).click(function() {
-            $(this).parent().slideUp()
-            $(this).parent().parent().removeClass('active');
-        });
-    });
 }); //end

@@ -770,16 +770,17 @@ section.faqs {
 .faq img {
     width: 50px;
     height: 50px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50% 50% 50% 4px;
     background: #FFFFFF;
-    box-shadow: 0px 1px 1px rgb(11 37 65 / 5%);
+    box-shadow: 0px 1px 1px rgb(11 37 65 / 10%);
     transition: all .4s ease;
+    position: absolute;
+    right: 10px;
 }
 .faq.active img {
     border-radius: 50% 4px 50% 50%;
     background: linear-gradient(90deg, #FBB03B 0%, #ED1E79 100%);
-    transform: rotate(360deg);
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -798,12 +799,6 @@ section.faqs {
     display: flex;
     justify-content: flex-end;
     padding: 0 80px 7px;
-}
-.active-img {
-    padding-left: 15px;
-    padding-right: 10px;
-    order: 2;
-    transform: scale(1.1);
 }
 .active-content {
     display: flex;
@@ -841,5 +836,10 @@ section.faqs {
     border: none;
     font-weight: bold;
     opacity: .4;
+    transition: all .4s ease;
+}
+.faq:not(.active) .faq-close {
+    opacity: 0;
+    z-index: -1;
 }
 
